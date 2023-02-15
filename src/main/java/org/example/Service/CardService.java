@@ -28,10 +28,7 @@ public class CardService {
     public List<Card> dealCards(List<Player> players, List<Card> cards){
         for(Player player : players){
             player.setCardsInHand(cards.stream().limit(9).collect(Collectors.toList()));
-            cards.subList(0, 9).clear(); //remove used cards from list
-//            System.out.println("[DEBUG] Player " + player.getId() + " cards:");
-//            player.getCardsInHand().forEach(it -> System.out.println(it.toString(it)));
-//            System.out.println("[DEBUG] Cards remaining: " + cards.size());
+            cards.subList(0, 9).clear(); //remove used cards from deck
         }
         return cards;
     }
